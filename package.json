@@ -1,0 +1,22 @@
+{
+  "name": "tp-6-flags",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kevolex/TP-6-Flags.git"
+  },
+  "author": "Kev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kevolex/TP-6-Flags/issues"
+  },
+  "homepage": "https://github.com/Kevolex/TP-6-Flags#readme",
+  "dependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
