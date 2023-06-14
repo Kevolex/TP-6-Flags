@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import {Card, Button, Input} from "react-bootstrap";
 
 const App = () => {
   const [countries, setCountries] = useState([]);
@@ -27,18 +28,18 @@ const App = () => {
     <div>
       <h1>Flag Management</h1>
       <p>You have {points} points</p>
-      <button onClick={() => setSelectedCountry(Math.random() * countries.length)}>
+      <Button onClick={() => setSelectedCountry(Math.random() * countries.length)}>
         Get a random country
-      </button>
+      </Button>
       {selectedCountry && (
-        <div>
+        <Card>
           <img src={countries[selectedCountry].flag} alt={countries[selectedCountry].name} />
-          <input
+          <Input
             type="text"
             placeholder="Guess the country"
             onChange={(e) => handleGuess(e.target.value)}
           />
-        </div>
+        </Card>
       )}
     </div>
   );
