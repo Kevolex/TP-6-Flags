@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Kevolex/TP-6-Flags#readme",
   "dependencies": {
-    "nodemon": "^2.0.22"
+    "nodemon": "^2.0.22",
+    "react-scripts": "^5.0.1"
   }
 }
