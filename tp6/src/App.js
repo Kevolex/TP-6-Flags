@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import {Card, Button, Input} from "react-bootstrap";
+import {Card, Button, InputGroup } from "react-bootstrap";
 
 const App = () => {
   const [countries, setCountries] = useState([]);
@@ -10,7 +10,7 @@ const App = () => {
   useEffect(() => {
     axios.get("https://countriesnow.space/api/v0.1/countries/flag/images")
       .then((res) => {
-        setCountries(res.data);
+        setCountries(res.data.data);
       })
       .catch((err) => console.log(err));
   }, []);
@@ -27,19 +27,18 @@ const App = () => {
   return (
     <div>
       <h1>Flag Management</h1>
-      <p>You have {points} points</p>
-      <Button onClick={() => setSelectedCountry(Math.random() * countries.length)}>
+      <p>Tenes {points} puntos</p>
+      <Button onClick={() => {
+          const rand = Math.floor(Math.random() * countries.length)
+          setSelectedCountry(rand)
+        }}>
         Get a random country
       </Button>
-      {selectedCountry && (
-        <Card>
-          <img src={countries[selectedCountry].flag} alt={countries[selectedCountry].name} />
-          <Input
-            type="text"
-            placeholder="Guess the country"
-            onChange={(e) => handleGuess(e.target.value)}
-          />
-        </Card>
+        
+      {selectedCountry && (<Card>
+        <Card.Img src={countries[selectedCountry].flag} alt={countries[selectedCountry].name} />
+        
+      </Card>
       )}
     </div>
   );
